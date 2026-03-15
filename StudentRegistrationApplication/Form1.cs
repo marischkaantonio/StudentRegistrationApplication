@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace StudentRegistrationApplication
@@ -16,20 +17,7 @@ namespace StudentRegistrationApplication
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            for(int days= 1; days <=31; days++) {   
-                Day.Items.Add(days);
-        }
-            for (int months = 1; months <=12; months++)
-            {
-                Month.Items.Add(months);
-            }
-            for (int year = 1900; year <= 2026; year++)
-            {
-                Yr.Items.Add(year);
-            }
-            }
+       
         private void button1_Click(object sender, EventArgs e)
         {
             string Lastname = LName.Text;
@@ -45,14 +33,21 @@ namespace StudentRegistrationApplication
             {
                 Gen = "Female";
             }
-            int day = Convert.ToInt32(Day.SelectedItem);
-            int month = Convert.ToInt32(Month.SelectedItem);
-            int year = Convert.ToInt32(Yr.SelectedItem);
-            
+            string day = Day.SelectedItem?.ToString();
+            string month = Month.SelectedItem?.ToString();  
+            string year = Yr.SelectedItem?.ToString();
+            string dob = $"{day}/{month}/{year}";
 
+            string program = cmbProgram.SelectedItem?.ToString();
           
             {
-                MessageBox.Show("STudent registered");
+                string message = $"Student name: {Firstname} {Middlename} {Lastname}\n" +
+                $"Gender: {Gen}\n" +
+                $"Date of Birth: {dob}\n" +
+                $"Program: {program}";
+
+
+                MessageBox.Show(message, "Confirmation");
                 return;
                
             }
@@ -64,5 +59,30 @@ namespace StudentRegistrationApplication
         {
 
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+           
+            for (int days = 1; days <= 31; days++)
+            {
+                Day.Items.Add(days);
+            }
+            string[] months = {"January","February","March","April","May","June","July","August","September",
+                "October","November","December"};
+           
+            {
+                Month.Items.AddRange(months);
+            }
+            for (int year = 1900; year <= 2026; year++)
+            {
+                Yr.Items.Add(year.ToString());
+            }
+            cmbProgram.Items.Add("Bachelor of Science in Computer Science");
+            cmbProgram.Items.Add("Bachelor of Science in Information Technology");
+            cmbProgram.Items.Add("Bachelor of Science in Information System");
+            cmbProgram.Items.Add("Bachelor of Science in Computer Engineering");
+        }
     }
-}
+    }
+    
+

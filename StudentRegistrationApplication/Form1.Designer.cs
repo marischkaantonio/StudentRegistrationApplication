@@ -46,6 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Gen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbProgram = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -88,7 +90,7 @@
             this.M.AutoSize = true;
             this.M.BackColor = System.Drawing.Color.Transparent;
             this.M.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M.Location = new System.Drawing.Point(186, 306);
+            this.M.Location = new System.Drawing.Point(202, 296);
             this.M.Name = "M";
             this.M.Size = new System.Drawing.Size(76, 29);
             this.M.TabIndex = 3;
@@ -101,7 +103,7 @@
             this.F.AutoSize = true;
             this.F.BackColor = System.Drawing.Color.Transparent;
             this.F.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.F.Location = new System.Drawing.Point(292, 306);
+            this.F.Location = new System.Drawing.Point(330, 296);
             this.F.Name = "F";
             this.F.Size = new System.Drawing.Size(98, 29);
             this.F.TabIndex = 4;
@@ -113,7 +115,7 @@
             // 
             this.Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Day.FormattingEnabled = true;
-            this.Day.Location = new System.Drawing.Point(76, 405);
+            this.Day.Location = new System.Drawing.Point(75, 376);
             this.Day.Name = "Day";
             this.Day.Size = new System.Drawing.Size(121, 33);
             this.Day.TabIndex = 5;
@@ -124,7 +126,7 @@
             // 
             this.Month.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Month.FormattingEnabled = true;
-            this.Month.Location = new System.Drawing.Point(203, 405);
+            this.Month.Location = new System.Drawing.Point(202, 376);
             this.Month.Name = "Month";
             this.Month.Size = new System.Drawing.Size(121, 33);
             this.Month.TabIndex = 6;
@@ -134,7 +136,7 @@
             // 
             this.Yr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Yr.FormattingEnabled = true;
-            this.Yr.Location = new System.Drawing.Point(331, 405);
+            this.Yr.Location = new System.Drawing.Point(330, 376);
             this.Yr.Name = "Yr";
             this.Yr.Size = new System.Drawing.Size(121, 33);
             this.Yr.TabIndex = 7;
@@ -146,7 +148,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(76, 455);
+            this.button1.Location = new System.Drawing.Point(75, 525);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(241, 41);
             this.button1.TabIndex = 8;
@@ -203,7 +205,7 @@
             this.Gen.AutoSize = true;
             this.Gen.BackColor = System.Drawing.Color.Transparent;
             this.Gen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gen.Location = new System.Drawing.Point(76, 306);
+            this.Gen.Location = new System.Drawing.Point(76, 296);
             this.Gen.Name = "Gen";
             this.Gen.Size = new System.Drawing.Size(92, 25);
             this.Gen.TabIndex = 13;
@@ -214,11 +216,32 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(76, 377);
+            this.label6.Location = new System.Drawing.Point(80, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "Date of birth*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(76, 427);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 25);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Program to Apply*";
+            // 
+            // cmbProgram
+            // 
+            this.cmbProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProgram.FormattingEnabled = true;
+            this.cmbProgram.Location = new System.Drawing.Point(77, 469);
+            this.cmbProgram.Name = "cmbProgram";
+            this.cmbProgram.Size = new System.Drawing.Size(456, 33);
+            this.cmbProgram.TabIndex = 16;
+            this.cmbProgram.Text = "-Select Program-";
             // 
             // Form1
             // 
@@ -226,7 +249,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudentRegistrationApplication.Properties.Resources.e30ed600_7eab_42da_abc2_e7e78badb581;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(561, 538);
+            this.ClientSize = new System.Drawing.Size(561, 599);
+            this.Controls.Add(this.cmbProgram);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Gen);
             this.Controls.Add(this.label4);
@@ -244,6 +269,7 @@
             this.Controls.Add(this.M);
             this.Name = "Form1";
             this.Text = "Student Registration Form";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,6 +293,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Gen;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbProgram;
     }
 }
 
