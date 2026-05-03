@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace StudentRegistrationApplication
 {
@@ -17,7 +18,30 @@ namespace StudentRegistrationApplication
         {
             InitializeComponent();
         }
-       
+       public void DisplayStudentInfo(string fname, string mname, string lname,string gender, 
+           string dob, string program)
+        {
+            string message = $"Student name: {fname} {mname} {lname}\n" +
+                             $"Gender: {gender}\n" +
+                             $"Date of Birth: {dob}\n" +
+                             $"Program: {program}";
+            MessageBox.Show(message, "Student Info");
+        }
+        public void DisplayStudentInfo(string fname, string lname, string gender,
+           string dob, string program)
+        {
+            string message = $"Student name: {fname} {lname}\n" +
+                            $"Gender: {gender}\n" +
+                            $"Date of Birth: {dob}\n" +
+                            $"Program: {program}";
+            MessageBox.Show(message, "Student Info");
+        }
+                 public void DisplayStudentInfo(string fname, string mname, string lname)
+        {
+            string message = $"Student name: {fname} {lname}";
+            MessageBox.Show(message, "Student Info");
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             string Lastname = LName.Text;
@@ -47,8 +71,9 @@ namespace StudentRegistrationApplication
                 $"Program: {program}";
 
 
-                MessageBox.Show(message, "Confirmation");
-                return;
+                DisplayStudentInfo(Firstname,Middlename, Lastname,Gen, dob, program);
+                DisplayStudentInfo(Firstname, Lastname, Gen, dob, program);
+                DisplayStudentInfo(Firstname,Middlename, Lastname);
                
             }
  
@@ -81,6 +106,21 @@ namespace StudentRegistrationApplication
             cmbProgram.Items.Add("Bachelor of Science in Information Technology");
             cmbProgram.Items.Add("Bachelor of Science in Information System");
             cmbProgram.Items.Add("Bachelor of Science in Computer Engineering");
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
     }
